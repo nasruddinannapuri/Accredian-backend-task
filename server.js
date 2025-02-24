@@ -14,6 +14,12 @@ app.use(cors({ origin: 'https://your-project.vercel.app' }));
 // Use body-parser middleware to handle JSON request bodies
 app.use(bodyParser.json());
 
+// Default route for the root path
+app.get('/', (req, res) => {
+  res.send('Backend is running!');
+});
+
+
 // Use the referral routes for any requests to /api/referrals
 app.use('/api/referrals', referralRoutes);
 
