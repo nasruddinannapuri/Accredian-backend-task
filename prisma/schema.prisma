@@ -6,8 +6,10 @@ datasource db {
 
 // Generate Prisma client to interact with the database
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
 }
+
 
 // Define the Referral model, representing a referral record in our database
 model Referral {
